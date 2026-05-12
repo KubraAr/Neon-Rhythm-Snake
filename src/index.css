@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00f3ff;
+  --color-neon-magenta: #ff00ff;
+  --color-neon-lime: #39ff14;
+  --color-neon-yellow: #fff01f;
+  
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-white selection:bg-neon-magenta/30 selection:text-white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.6));
+  }
+  .glow-magenta {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.6));
+  }
+  .glow-lime {
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.6));
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
